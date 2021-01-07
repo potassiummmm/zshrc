@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/algiz/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -125,7 +125,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
 export PATH=$PATH:$MAVEN_HOME/bin
 
-export CMAKE_ROOT=/Users/algiz/Desktop/Qt/Tools/CMake/CMake.app/Contents/bin/
+export CMAKE_ROOT=$HOME/Desktop/Qt/Tools/CMake/CMake.app/Contents/bin/
 export PATH=$CMAKE_ROOT:$PATH
 
 export PATH="/usr/local/opt/php/bin:$PATH"
