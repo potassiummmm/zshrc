@@ -119,7 +119,6 @@ alias gc="git clone "
 alias gm="git commit "
 
 
-
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
