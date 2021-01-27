@@ -69,6 +69,7 @@ ZSH_THEME="myagnosterlight"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  vi-mode
   git
   zsh-autosuggestions
   zsh-syntax-highlighting        
@@ -118,13 +119,20 @@ alias vz="vim ~/.zshrc"
 alias gc="git clone "
 alias gm="git commit "
 
-
+# Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# Maven
 export MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
 export PATH=$PATH:$MAVEN_HOME/bin
 
+# Cmake
 export CMAKE_ROOT=$HOME/Desktop/Qt/Tools/CMake/CMake.app/Contents/bin/
 export PATH=$CMAKE_ROOT:$PATH
 
+# php
 export PATH="/usr/local/opt/php/bin:$PATH"
+
+# Golang
+export PATH="/usr/local/opt/go@1.14/bin:$PATH"
+export GOPATH="$HOME/Documents/code/GoPath"
