@@ -69,7 +69,6 @@ ZSH_THEME="myagnosterlight"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  vi-mode
   git
   zsh-autosuggestions
   zsh-syntax-highlighting        
@@ -118,6 +117,21 @@ alias sz="source ~/.zshrc"
 alias vz="vim ~/.zshrc"
 alias gc="git clone "
 alias gm="git commit "
+
+# vi-mode
+bindkey -v
+
+function zle-keymap-select {
+	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+		echo -ne '\e[1 q'
+	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
+		echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Use beam shape cursor on startup.
+echo -ne '\e[5 q'
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
