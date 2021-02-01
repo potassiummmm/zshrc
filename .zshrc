@@ -150,3 +150,7 @@ export PATH="/usr/local/opt/php/bin:$PATH"
 # Golang
 export PATH="/usr/local/opt/go@1.14/bin:$PATH"
 export GOPATH="$HOME/Documents/code/GoPath"
+export GOPROXY=https://goproxy.io
+export GO111MODULE=off
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
