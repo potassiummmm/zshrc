@@ -117,7 +117,8 @@ alias sz="source ~/.zshrc"
 alias vz="vim ~/.zshrc"
 alias gc="git clone "
 alias gm="git commit "
-
+alias lc="cd ~/Desktop/Projects/LeetCodeProblems && vim"
+alias bot="cd ~/Desktop/Github/MiraiBot && vim"
 # vi-mode
 bindkey -v
 
