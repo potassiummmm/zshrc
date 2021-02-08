@@ -119,6 +119,8 @@ alias gc="git clone "
 alias gm="git commit "
 alias lc="cd ~/Desktop/Projects/LeetCodeProblems && vim"
 alias bot="cd ~/Desktop/Github/MiraiBot && vim"
+alias gh="cd ~/Desktop/Github"
+alias dl="wget -c "
 # vi-mode
 bindkey -v
 
