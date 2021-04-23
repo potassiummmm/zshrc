@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -112,11 +112,14 @@ alias vim="nvim"
 alias ra="ranger"
 alias de="cd ~/Desktop"
 alias vc="vim ~/.config/nvim/init.vim"
+alias vh="vim ~/.zsh_history"
 alias coc="vim ~/.config/nvim/coc-settings.json"
 alias sz="source ~/.zshrc"
 alias vz="vim ~/.zshrc"
 alias gc="git clone "
 alias gm="git commit "
+alias db="cd ~/Documents/docker_images && docker compose up -d"
+alias sql="sqlplus system/potassiummmm@//localhost:1521/xe"
 alias lc="cd ~/Desktop/Projects/LeetCodeProblems && vim"
 alias bot="cd ~/Desktop/Github/MiraiBot && vim"
 alias gh="cd ~/Desktop/Github"
@@ -148,12 +151,15 @@ export CMAKE_ROOT=$HOME/Desktop/Qt/Tools/CMake/CMake.app/Contents/bin/
 export PATH=$CMAKE_ROOT:$PATH
 
 # php
-export PATH="/usr/local/opt/php/bin:$PATH"
+export PATH=/usr/local/opt/php/bin:$PATH
 
 # Golang
-export PATH="/usr/local/opt/go@1.14/bin:$PATH"
+export PATH=/usr/local/opt/go@1.14/bin:$PATH
 export GOPATH="$HOME/Documents/code/GoPath"
 export GOPROXY=https://goproxy.io
 export GO111MODULE=off
+
+# Oracle Database
+export PATH=~/Documents/instantclient_19_8:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
