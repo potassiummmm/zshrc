@@ -69,6 +69,7 @@ ZSH_THEME="myagnosterlight"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  vi-mode
   git
   zsh-autosuggestions
   zsh-syntax-highlighting        
@@ -118,14 +119,19 @@ alias sz="source ~/.zshrc"
 alias vz="vim ~/.zshrc"
 alias gc="git clone "
 alias gm="git commit "
-alias db="cd ~/Documents/docker_images && docker compose up -d"
-alias sql="sqlplus system/potassiummmm@//localhost:1521/xe"
-alias lc="cd ~/Desktop/Projects/LeetCodeProblems && vim"
+alias lc="cd ~/Desktop/Projects/LeetCodeProblems && vim -c ':CocList LeetcodeProblems'"
 alias bot="cd ~/Desktop/Github/MiraiBot && vim"
 alias gh="cd ~/Desktop/Github"
 alias dl="wget -c "
+alias pi="python3 -m pip install "
+alias mcl="cd ~/Desktop/Mirai/mcl-1.0.4/ && ./mcl"
+alias csapp="docker start b2861d857859 && docker attach b2861d857859"
 # vi-mode
 bindkey -v
+
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
+
 
 function zle-keymap-select {
 	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
@@ -139,22 +145,28 @@ zle -N zle-keymap-select
 # Use beam shape cursor on startup.
 echo -ne '\e[5 q'
 
+export PATH=/usr/local/sbin:$PATH
+
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Maven
 export MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
 export PATH=$PATH:$MAVEN_HOME/bin
 
 # Cmake
-export CMAKE_ROOT=$HOME/Desktop/Qt/Tools/CMake/CMake.app/Contents/bin/
-export PATH=$CMAKE_ROOT:$PATH
+# export CMAKE_ROOT=$HOME/Desktop/Qt/Tools/CMake/CMake.app/Contents/bin/
+# export PATH=$CMAKE_ROOT:$PATH
+
+
+# llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # php
-export PATH=/usr/local/opt/php/bin:$PATH
+# export PATH=/usr/local/opt/php/bin:$PATH
 
 # Golang
-export PATH=/usr/local/opt/go@1.14/bin:$PATH
+# export PATH=/usr/local/opt/go@1.14/bin:$PATH
 export GOPATH="$HOME/Documents/code/GoPath"
 export GOPROXY=https://goproxy.io
 export GO111MODULE=off
@@ -162,4 +174,35 @@ export GO111MODULE=off
 # Oracle Database
 export PATH=~/Documents/instantclient_19_8:$PATH
 
+# Python Binary Files
+export PATH=~/Library/Python/3.9/bin:$PATH
+
+# Mono
+export PATH=/Library/Frameworks/Mono.framework/Versions/6.12.0/bin:$PATH
+
+# Downloaded binary files
+export PATH=~/Documents/bin:$PATH
+
+export PATH=/usr/local/opt/inetutils/libexec/gnubin:$PATH
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias luamake=/Users/algiz/Desktop/Github/lua-language-server/3rd/luamake/luamake
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="/usr/local/opt/riscv-gnu-toolchain/bin:$PATH"
