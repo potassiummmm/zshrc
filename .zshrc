@@ -120,12 +120,10 @@ alias vz="vim ~/.zshrc"
 alias gc="git clone "
 alias gm="git commit "
 alias lc="cd ~/Desktop/Projects/LeetCodeProblems && vim -c ':CocList LeetcodeProblems'"
-alias bot="cd ~/Desktop/Github/MiraiBot && vim"
-alias gh="cd ~/Desktop/Github"
-alias dl="wget -c "
-alias pi="python3 -m pip install "
-alias mcl="cd ~/Desktop/Mirai/mcl-1.0.4/ && ./mcl"
-alias csapp="docker start b2861d857859 && docker attach b2861d857859"
+alias gh="cd ~/Desktop/Repo"
+alias dl="curl -C - -O "
+alias pi="pip install "
+alias sql="bash /Applications/SQLDeveloper.app/Contents/Resources/sqldeveloper/sqldeveloper.sh"
 # vi-mode
 bindkey -v
 
@@ -145,64 +143,45 @@ zle -N zle-keymap-select
 # Use beam shape cursor on startup.
 echo -ne '\e[5 q'
 
-export PATH=/usr/local/sbin:$PATH
-
 # Java
-# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home"
+export JAVA_11_HOME="/Users/algiz/Library/Java/JavaVirtualMachines/liberica-11.0.13/"
+export JAVA_17_HOME="/Users/algiz/Library/Java/JavaVirtualMachines/openjdk-17.0.1/Contents/Home"
 
-# Maven
-export MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
-export PATH=$PATH:$MAVEN_HOME/bin
+alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
+alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+alias jdk17='export JAVA_HOME=$JAVA_17_HOME'
 
-# Cmake
-# export CMAKE_ROOT=$HOME/Desktop/Qt/Tools/CMake/CMake.app/Contents/bin/
-# export PATH=$CMAKE_ROOT:$PATH
+export JAVA_HOME=$JAVA_11_HOME
 
 
 # llvm
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-
-# php
-# export PATH=/usr/local/opt/php/bin:$PATH
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # Golang
-# export PATH=/usr/local/opt/go@1.14/bin:$PATH
 export GOPATH="$HOME/Documents/code/GoPath"
 export GOPROXY=https://goproxy.io
 export GO111MODULE=off
 
-# Oracle Database
-export PATH=~/Documents/instantclient_19_8:$PATH
-
-# Python Binary Files
-export PATH=~/Library/Python/3.9/bin:$PATH
-
-# Mono
-export PATH=/Library/Frameworks/Mono.framework/Versions/6.12.0/bin:$PATH
-
 # Downloaded binary files
 export PATH=~/Documents/bin:$PATH
 
-export PATH=/usr/local/opt/inetutils/libexec/gnubin:$PATH
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-alias luamake=/Users/algiz/Desktop/Github/lua-language-server/3rd/luamake/luamake
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="/usr/local/opt/riscv-gnu-toolchain/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

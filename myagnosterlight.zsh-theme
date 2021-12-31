@@ -116,6 +116,17 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
 }
 
+# local conda_prompt='$(conda_prompt_info)'
+prompt_conda_info() {
+  if [[ -n $CONDA_DEFAULT_ENV ]]; then
+		if [[ $CONDA_DEFAULT_ENV != 'base' ]]; then
+			color=cyan
+			prompt_segment cyan $PRIMARY_FG
+			print -Pn "($(basename $CONDA_DEFAULT_ENV))"
+		fi
+  fi
+}
+
 ## Main prompt
 prompt_agnoster_main() {
   RETVAL=$?
@@ -124,6 +135,7 @@ prompt_agnoster_main() {
   prompt_context
   prompt_dir
   prompt_git
+	prompt_conda_info
   prompt_end
 }
 
